@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="column">
+      <div class="container" fxLayout="row">
+          <div class="card" *ngIf="!deviceXs" fxLayout="row">
+              <div class="card-example" >
+              <!-- MultiStep Form -->
+              <mat-vertical-stepper labelPosition="bottom" #stepper linear>
+                <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+                  <form [formGroup]="firstFormGroup" >
+                    <ng-template matStepLabel>Fill out your personal details</ng-template>
+                    <mat-form-field>
+                      <mat-label>Name</mat-label>
+                      <input matInput placeholder="Last name, First name" formControlName="userName" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Mobilenumber</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="userPhone" required>
+                      </mat-form-field>
+                      
+                        <mat-form-field>
+                          <mat-label>Email</mat-label>
+                          <input matInput placeholder="Test@gmail.com" formControlName="userEmail" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="userCity" required>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>ZipCode</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="userZipCode" required>
+                      </mat-form-field>
+                    <div>
+                      <button mat-button matStepperNext (click)="onsubmit()">Next</button>
+                     
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup" errorMessage="Name is required.">
+                  <form [formGroup]="secondFormGroup" >
+                    <ng-template matStepLabel>Fill out your gadget details</ng-template>
+                    <mat-form-field>
+                      <mat-label>Brand</mat-label>
+                      <input matInput formControlName="userBrand" placeholder="Ex. 1 Apple Samsung, Vivo Oppo, Mi"
+                             required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Model</mat-label>
+                        <input matInput formControlName="userModel" placeholder="Ex. 1 Iphone 12 Y81, F11 pro, Note8"
+                               required>
+                               
+                      </mat-form-field>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button matStepperNext>Next</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="thirdFormGroup" errorMessage="Name is required.">
+                    <form [formGroup]="thirdFormGroup" >
+                      <ng-template matStepLabel>Stuck At Point</ng-template>
+                      <mat-form-field>
+                        <mat-label>Issue</mat-label>
+                        <input matInput formControlName="userIssue" placeholder="Ex. 1 Heating Restart, NotWorking Display,Battery"
+                               required>
+                      </mat-form-field>
+                      <mat-form-field>
+                          <mat-label>Reason</mat-label>
+                          <input matInput formControlName="userReason" placeholder="Ex. 1 NoIdea,Software, Damage, Water"
+                                 required>
+                        </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel>Done</ng-template>
+                  <p>You are now done.</p>
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                    <button mat-button (click)="submit()">submit</button>
+                  </div>
+                </mat-step>
+              </mat-vertical-stepper>
+              
+              <!-- /.MultiStep Form -->
+               </div>
+          </div>
+          <div class="card" *ngIf="deviceXs" fxLayout="row">
+              <!-- MultiStep Form -->
+
+              <!-- /.MultiStep Form -->
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.container{
+    background-size: cover;
+    
+    height: 540px; 
+    display: block; 
+    background-repeat: no-repeat;
+    align-content: center;
+    
+}
+.row {
+    display: flex;
+    
+  }
+  
+  .row .column {
+    flex:100%;
+    position: relative;
+    overflow-y: scroll;
+    background-image:url("/../assets/img/slide1a2.jpg");
+
+  }
+.card{
+    align-content: center;
+    text-align: center; 
+    margin: auto;
+    height: 500px;
+    margin-top: 3%;
+}
+.card-example{
+    align-content: center;
+    width: 300px;
+    height: 520px;
+    display:flex; 
+    padding-top: 5%;
+    padding-right: 10%;
+    padding-left: 8%;
+    margin-bottom: 60%;
+    text-align: center;background-color:white;
+
+}
+.card-example button{
+    margin: 3px;
+    z-index:10px;
+}
+.input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}

@@ -1,0 +1,10 @@
+<div class="products">
+    <div class="product" *ngFor="let item of products">
+       <mat-card>
+         <p>{{item.categoryName}}</p>
+         <p><strong></strong></p>
+         <img src="">
+            <button type="button" (click)="viewByCategory(item.categoryId)">click here</button>
+       </mat-card>
+    </div>
+ </div>

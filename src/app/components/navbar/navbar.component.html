@@ -1,0 +1,96 @@
+
+<div class="example-container"
+[class.mat-elevation-z14]="!isActive"
+[class.mat-elevation-z100]="isActive">
+<mat-toolbar color="primary" class="sticky">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row">
+      <button mat-raised-button color="primary">
+        <mat-icon>stay_current_portrait</mat-icon>
+        <span class="logo">Mobi-Docker</span>
+        
+      </button>
+      <div *ngIf="!deviceXs" fxLayout="row">
+        <a *ngIf="!loggedIn" mat-button routerLink="home">Home</a>
+        <a *ngIf="!loggedIn" mat-button routerLink="services">Services</a>
+        <a *ngIf="!loggedIn" mat-button routerLink="aboutUs">About Us</a>
+        <a *ngIf="!loggedIn" mat-raised-button color="accent" routerLink="bookNow">Book Now</a>
+        <a *ngIf="loggedIn" mat-button routerLink="home">Adminh</a>
+        <a  *ngIf="loggedIn" mat-button routerLink="">Servic</a>
+        <a *ngIf="loggedIn" mat-button routerLink="">Admin Us</a>
+        <a
+        *ngIf="loggedIn"
+         mat-raised-button color="primary"
+         (click)="openDialog()"
+         fxLayoutAlign="end"
+         >
+        <mat-icon>search</mat-icon>
+       </a>
+    </div>
+    </div>
+
+
+    <div *ngIf="!loggedIn">
+      <button *ngIf="deviceXs" mat-raised-button (click)="openDialog()">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button
+        *ngIf="!deviceXs"
+        mat-raised-button color="primary"
+        (click)="openDialog()"
+        fxLayoutAlign="end"
+      >
+      <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="loggedIn">
+      <button *ngIf="deviceXs" mat-raised-button [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button
+        *ngIf="!deviceXs"
+        mat-raised-button color="primary"
+        [matMenuTriggerFor]="menu"
+        fxLayoutAlign="end" 
+      >
+      <mat-icon>person</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end" >
+    <a *ngIf="!loggedIn" mat-button routerLink="home">Home</a>
+    <a *ngIf="!loggedIn" mat-button routerLink="services">Services</a>
+    <a *ngIf="!loggedIn" mat-button routerLink="aboutUs">About Us</a>
+    <a *ngIf="!loggedIn" mat-raised-button color="accent" routerLink="bookNow">Book Now</a>
+    <a *ngIf="loggedIn" mat-button routerLink="home">Adminh</a>
+    <a  *ngIf="loggedIn" mat-button routerLink="">Servic</a>
+    <a *ngIf="loggedIn" mat-button routerLink="">Admin Us</a>
+    <a
+    *ngIf="loggedIn"
+     mat-raised-button color="primary"
+     (click)="openDialog()"
+     fxLayoutAlign="end"
+     >
+    <mat-icon>search</mat-icon>
+   </a>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+</div>
+<!-- Menu Items -->
+<mat-menu #menu="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item (click)="logoutUser()">
+    <mat-icon>person_off</mat-icon>
+    <span>LogOut</span>
+  </button>
+</mat-menu>

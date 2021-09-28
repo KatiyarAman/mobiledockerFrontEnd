@@ -1,0 +1,127 @@
+<div class="row">
+    <div class="column">
+        <div class="container" fxLayout="row">
+            <div class="card" *ngIf="!deviceXs" fxLayout="row">
+      
+      <div class="columnn"   fxHide.xs>
+        <h2 fxLayoutAlign="center">Category</h2>
+        <mat-selection-list [(ngModel)]="catSelected" (ngModelChange)="onCategorySelected($event)"
+         [multiple]="false">
+         <mat-list-option *ngFor="let category of typesOfCategory" [value]="category.Id">
+         <button mat-raised-button  > {{category.Name}}</button>
+         </mat-list-option>
+       </mat-selection-list>
+      </div>
+     
+      
+         <div class="col" >
+          <div class="mat-elevation-z8">
+            <form (ngSubmit)="submit()"  [formGroup]="partDetails">
+              <mat-error>{{message}}</mat-error>
+              
+              <div>
+                <mat-form-field appearance="fill" formGroupName="headerCategoryId">
+                  <mat-label>Select-Category</mat-label>
+                    <mat-select formControlName="headerCategoryId"  [(ngModel)]="categoryModel.headerCategoryId" (ngModelChange)="onChangeCategory($event)">
+                        <mat-option *ngFor="let model of headercategoryData" [value]="model.categoryId">
+                            {{model.categoryName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Here's the model dropdown arrow ^</mat-hint>
+                    <a mat-icon-button matSuffix>
+                      <mat-icon>colorize</mat-icon> 
+                     </a>
+               </mat-form-field>
+                <mat-form-field appearance="fill" formGroupName="brandName" >
+                  <mat-label>Select Brand</mat-label>
+                  <mat-select formControlName="brandName" required [(ngModel)]="categoryModel.brandId" (ngModelChange)="onChangeBrand($event)"> 
+              
+                    <mat-option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</mat-option>
+                  </mat-select>
+                  <mat-hint align="end">Here's the brand dropdown arrow ^</mat-hint>
+                  <a mat-icon-button matSuffix>
+                    <mat-icon>mobile_friendly</mat-icon> 
+                   </a>
+                 </mat-form-field>
+                 <mat-form-field appearance="fill" formGroupName="modelName">
+                  <mat-label>Select-Model</mat-label>
+                    <mat-select formControlName="modelName" required [(ngModel)]="categoryModel.modelId">
+                        <mat-option *ngFor="let model of parts" [value]="model.modelId">
+                            {{model.modelName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Here's the model dropdown arrow ^</mat-hint>
+                    <a mat-icon-button matSuffix>
+                      <mat-icon>devices</mat-icon> 
+                     </a>
+               </mat-form-field>
+               
+                </div>
+                
+                <div>
+                  <mat-form-field appearance="fill" formGroupName="parent">
+                    <mat-label>Select-Sub-Category</mat-label>
+                      <mat-select formControlName="parent"  [(ngModel)]="categoryModel.parent" >
+                          <mat-option *ngFor="let model of categoryData" [value]="model.categoryId">
+                              {{model.categoryName}}
+                          </mat-option>
+                      </mat-select>
+                      <mat-hint align="end">Here's the sub-category dropdown arrow ^</mat-hint>
+                      <a mat-icon-button matSuffix>
+                        <mat-icon>remember_me</mat-icon> 
+                       </a>
+                 </mat-form-field>
+                  <mat-form-field appearance="fill" formGroupName="categoryName" >
+                    <mat-label>Sub-Category Name</mat-label>
+                     <input matInput  placeholder="categoryName."  formControlName="categoryName" [(ngModel)]="categoryModel.categoryName">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the categoryName if you not selected sub-category^</mat-hint>
+                   </mat-form-field>
+                   
+                  <mat-form-field appearance="fill" formGroupName="categoryPrice" >
+                    <mat-label>Category Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="categoryPrice" required [(ngModel)]="categoryModel.categoryPrice">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>price_check</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the categoryPrice price^</mat-hint>
+                   </mat-form-field>
+              
+                     <mat-form-field appearance="fill" formGroupName="categoryDescription" >
+                      <mat-label>Enter categoryDescription </mat-label>
+                       <textarea matInput  placeholder="Series No."  formControlName="categoryDescription" required [(ngModel)]="categoryModel.categoryDescription"></textarea>
+                       <a mat-icon-button matSuffix>
+                        <mat-icon>description</mat-icon> 
+                       </a>
+                       <mat-hint align="end">Here's the battrey price ^</mat-hint>
+                     </mat-form-field>
+                     
+          
+                  </div>
+                <button type="submit" mat-raised-button color="primary" >Submit</button>
+                <button type="reset" mat-raised-button color="primary" (click)="onReset()">Reset</button>
+                              <pre>{{partDetails.value | json}}</pre>
+
+            </form>   
+            <br>
+  
+           </div>
+         </div>
+    <br>       
+    </div>
+  </div>
+  </div>
+  </div>
+  
+  
+      
+    <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+  >
+    <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>

@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="column">
+        <div class="container" fxLayout="row">
+            <div class="card" *ngIf="!deviceXs" fxLayout="row">
+                <!-- MultiStep Form -->
+                
+                        <form (ngSubmit)="submit()" id="msform" [formGroup]="multiStep">
+                            
+                            <div *ngIf="step==1" class="fieldset" formGroupName="userDetails">
+                                <h2 >Personal Details</h2>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" formControlName="fname" value="" id="fname"
+                                               placeholder="First Name" required/>
+                                            </div>
+                                               <div class="col">
+                                        <input type="text" formControlName="lname" placeholder="Last Name"/>
+                                    </div>
+                                </div>
+                                <input type="text" formControlName="phone" id="phone" value=""
+                                       placeholder="Phone no" required/>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" formControlName="cityName" id="cityName" value=""
+                                               placeholder="City" required/>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" name="zipCode" id="zipCode" value=""
+                                               placeholder="ZipCode" required/>
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div *ngIf="step==2" class="fieldset" formGroupName="gadgetDetails">
+                                <h2 class="fs-title">Gadget Details</h2>
+                                <input type="text" formControlName="brand" id="brand" value=""
+                                       placeholder="Brand" required/>
+                                <input type="text" formControlName="model" id="model" value=""
+                                       placeholder="Model" required/>
+                                
+                            </div>
+        
+                            <div *ngIf="step==3" class="fieldset" formGroupName="issueDetails">
+                                <h2 class="fs-title">Stuck At Point</h2>
+                                <input type="text" formControlName="issue" id="issue" placeholder="description"
+                                       value="" required/>
+                                <input type="text" formControlName="reason" id="reason" value=""
+                                       placeholder="Reason"/>
+                        
+                            </div>
+                            <div>
+                                <a type="button"  class="previous action-button" *ngIf="step !=1" (click)="previous()">previous</a>
+                                <button  type="submit" class="next action-button" *ngIf="step!=3">Next</button>
+                                <button type="submit"  class="submit action-button" *ngIf="step==3" (click)="btnClick()">Submit</button>
+                                <br>
+                            </div>
+                        </form>
+        
+                <!-- /.MultiStep Form -->
+            </div>
+            <div class="card" *ngIf="deviceXs" fxLayout="row">
+                <!-- MultiStep Form -->
+                
+                        <form (ngSubmit)="submit()" id="msform" [formGroup]="multiStep">
+                            
+                            <div *ngIf="step==1" class="fieldset" formGroupName="userDetails">
+                                <h2 >Personal Details</h2>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" formControlName="fname" value="" id="fname"
+                                               placeholder="First Name" required/>
+                                            </div>
+                                               <div class="col">
+                                        <input type="text" formControlName="lname" placeholder="Last Name"/>
+                                    </div>
+                                </div>
+                                <input type="text" formControlName="phone" id="phone" value=""
+                                       placeholder="Phone no" required/>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" formControlName="cityName" id="cityName" value=""
+                                               placeholder="City" required/>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" name="zipCode" id="zipCode" value=""
+                                               placeholder="ZipCode" required/>
+                                    </div>
+                                </div>
+        
+                            </div>
+        
+                            <div *ngIf="step==2" class="fieldset" formGroupName="gadgetDetails">
+                                <h2 class="fs-title">Gadget Details</h2>
+                                <input type="text" formControlName="brand" id="brand" value=""
+                                       placeholder="Brand" required/>
+                                <input type="text" formControlName="model" id="model" value=""
+                                       placeholder="Model" required/>
+                                
+                            </div>
+        
+                            <div *ngIf="step==3" class="fieldset" formGroupName="issueDetails">
+                                <h2 class="fs-title">Stuck At Point</h2>
+                                <input type="text" formControlName="issue" id="issue" placeholder="description"
+                                       value="" required/>
+                                <input type="text" formControlName="reason" id="reason" value=""
+                                       placeholder="Reason"/>
+                        
+                            </div>
+                            <div>
+                                <a type="button"  class="previous action-button" *ngIf="step !=1" (click)="previous()">previous</a>
+                                <button  type="submit" class="next action-button" *ngIf="step!=3">Next</button>
+                                <button type="submit"  class="submit action-button" *ngIf="step==3" (click)="btnClick()">Submit</button>
+                                <br>
+                            </div>
+                        </form>
+        
+                <!-- /.MultiStep Form -->
+            </div>
+        </div>
+    </div>
+</div>

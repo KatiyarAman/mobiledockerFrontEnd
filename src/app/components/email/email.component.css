@@ -1,0 +1,21 @@
+.field{
+    width: 100%;
+}
+.card{
+    width: 60%;
+    margin: left 40px;
+ background: lavenderblush;
+    padding: 20px;
+}
+.container{
+    background-image:url("/../assets/img/slide1a2.jpg");
+    background-size: 100%;
+    background-size: cover;
+    height:100%;  
+}
+.text-center{
+    text-align: center;
+}
+.card button{
+    margin: 7px;
+}

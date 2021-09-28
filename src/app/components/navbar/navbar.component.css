@@ -1,0 +1,20 @@
+.spacer{
+flex: 1 1 auto;
+}
+.logo {
+    padding: 0px 5px;
+    font-size: 20px;
+  }
+  .example-container {
+    
+    position: relative;
+  }
+  .sticky{
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .content{
+    height: 200vh;
+  }

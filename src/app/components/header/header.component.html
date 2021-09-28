@@ -1,0 +1,68 @@
+<div class="header" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+  <nav class="header_top" fxLayout="row" >
+    <div class="header_menu">
+      <div class="header_menu_icon" routerLink="/">
+       
+          <mat-icon>stay_current_portrait</mat-icon>
+      </div>
+     <!-- <img routerLink="/" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" class="header_menu_logo" alt="">
+   --><div class="header_menu_searchbar">
+     <input type="text" #box (keyup)="searchByKeyword(box.value)" class="header_menu_input">
+     <div class="header_menu_searchbar_icon">
+       <mat-icon>search</mat-icon>
+
+     </div>
+   </div>
+  
+   <div routerLink="/login" class="header_menu_signin">
+     <span class="header_menu_top_item">Hello, Sign in</span>
+     <span class="header_menu_bottom_item">Accounts & Lists</span>
+
+   </div>
+   <div routerLink="/my_order" class="header_menu_signin">
+    <span class="header_menu_top_item">Returns</span>
+    <span class="header_menu_bottom_item">& Orders</span>
+
+  </div>
+  <div  routerLink="/checkout" class="header_menu_cart">
+    <mat-icon>shopping_cart</mat-icon>
+    <p class="header_cart_number">{{shoppingCart.getCartLength()}}</p>
+  </div>
+    </div>
+
+  </nav>
+  <nav class="header_bottom">
+    <div class="header_bottom_location_text" *ngIf="!deviceXs">
+
+     <!-- <span class="header_left_line_one"><mat-icon>menu</mat-icon></span>
+      <span class="header_left_line_one" >Best Seller </span>
+      <span class="header_left_line_one"><strong>Refurbished Mobile</strong></span>
+      <span class="header_left_line_one"><strong>Refurbished Laptop</strong></span>-->
+      <button mat-button routerLink="bestSeller" class="button button1">Best Seller</button>
+      <button mat-button routerLink="mobile" class="button button1">Refurbished Mobile</button>
+      <button mat-button routerLink="laptop" class="button button1">Refurbished Laptop</button>
+      <button mat-button routerLink="laptop" class="button button1">Refurbished Ipad</button>
+      <button mat-button routerLink="laptop" class="button button1">Refurbished Watch</button>
+
+      <button mat-button color="" routerLink="customer" class="button button1">Customer Support</button>
+      <span  class="header_left_line_two"> </span>
+  </div>
+  <div class="header_bottom_location_text" *ngIf="deviceXs">
+
+    <!-- <span class="header_left_line_one"><mat-icon>menu</mat-icon></span>
+     <span class="header_left_line_one" >Best Seller </span>
+     <span class="header_left_line_one"><strong>Refurbished Mobile</strong></span>
+     <span class="header_left_line_one"><strong>Refurbished Laptop</strong></span>-->
+     <button mat-button routerLink="bestSeller" class="button button1">Best Seller</button>
+     <button mat-button routerLink="mobile" class="button button1">Mobile</button>
+     <button mat-button routerLink="laptop" class="button button1">Laptop</button>
+     <button mat-button routerLink="laptop" class="button button1">Ipad</button>
+     <button mat-button routerLink="laptop" class="button button1">Watch</button>
+
+     <button mat-button color="" routerLink="customer" class="button button1">Support</button>
+     <span  class="header_left_line_two"> </span>
+ </div>
+  </nav>
+
+
+</div>

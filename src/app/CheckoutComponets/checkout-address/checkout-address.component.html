@@ -1,0 +1,43 @@
+<form [formGroup]="customerForm" >
+    <table>
+        <tr>
+         <td>
+             <div class="form-group">
+            
+             
+            </div>
+         </td>
+        
+     </tr>
+       <tr>
+         <td>
+          <div class="form-filed">
+
+          
+         <div formArrayName="employee">
+             <div *ngFor="let skill of employee.controls; let i=index">
+               <div [formGroupName]="i">
+                 <label >Employee Name</label>
+                 <input type="text" formControlName="employeeName">
+                 <label>Employee Email</label>
+                 <input type="text" formControlName="employeeEmail">
+                 <label >Employee Phone</label>
+                 <input type="text" formControlName="employeePhone">
+                 <button (click)="onSubmit()">Submit</button>
+               </div>
+             </div>
+           </div>
+
+         </div>
+         </td>
+         </tr>
+    
+
+    </table>
+</form>
+
+    <div *ngIf="employee.length == 0">
+        <button type="button" class="btn" (click)="addEmployee()">Add Employee</button>
+    </div>
+  
+{{this.customerForm.value | json}}

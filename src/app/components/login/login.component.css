@@ -1,0 +1,35 @@
+.container{
+    background-size: cover;
+    height:auto; 
+    display: block; 
+    background-repeat: no-repeat;
+    align-content: center;
+    background-color: forestgreen;
+}
+
+.card{
+    align-content: center;
+    text-align: center; 
+    margin: auto;
+    height: 400px;
+   
+    margin-top: 7%;
+}
+.card-example{
+    align-content: center;
+    width: 270px;
+    height: auto;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 8%;
+    margin-bottom: 60%;
+    text-align: center;background-color: rgb(238, 238, 238);
+
+}
+.card-example button{
+    margin: 3px;
+    z-index:10px;
+}
+.input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}

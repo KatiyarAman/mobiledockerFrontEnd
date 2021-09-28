@@ -1,0 +1,15 @@
+<div class="products">
+   <p *ngFor="let alert of alerts">
+      <ngb-alert style="width: 300px; color: darkblue; text-align: center;" [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+    <div class="product" *ngFor="let item of products">
+       <mat-card>
+         <p>{{item.brandName}}</p>
+         <p>{{item.modelName}}</p>
+         <p>$<strong>{{item.categoryPrice}}</strong></p>
+         <img src="">
+         <p>$<strong>{{item.categoryDescription}}</strong></p>
+            <button type="button" (click)="addToCart(item)">add To Cart</button>
+       </mat-card>
+    </div>
+ </div>

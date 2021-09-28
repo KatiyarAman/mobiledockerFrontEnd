@@ -1,0 +1,69 @@
+
+  <div class="row" fxLayout="row">
+    
+    <div class="column"   fxHide.xs>
+      <h2 fxLayoutAlign="center">Category</h2>
+      <!-- <mat-selection-list [(ngModel)]="catSelected" (ngModelChange)="onCategorySelected($event)"
+       [multiple]="false">
+       <mat-list-option *ngFor="let category of typesOfCategory" [value]="category.Id">
+       <button mat-raised-button  > {{category.Name}}</button>
+       </mat-list-option>
+     </mat-selection-list> -->
+
+    </div>
+   
+    
+       <div class="col">
+        <div class="mat-elevation-z8">
+          <form (ngSubmit)="submit()"  [formGroup]="brandDetails">
+            <mat-error>{{message}}</mat-error>
+            <div>
+              <ng-select  [items]="categories"
+              
+              bindValue="categoryId"
+              bindLabel="categoryName"
+              placeholder="Select age"
+              formControlName="categoryName">
+            </ng-select>
+              <!-- <mat-form-field appearance="fill" formGroupName="categoryName">
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="categoryName" required [(ngModel)]="brand.categoryId"> 
+                  <mat-option *ngFor="let brand of categories" [value]="brand.categoryId">{{brand.categoryName}}</mat-option>
+                </mat-select>
+
+               
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                <a mat-icon-button matSuffix>
+                  <mat-icon>devices</mat-icon> 
+                 </a>
+               </mat-form-field> -->
+
+            <!-- <mat-form-field appearance="fill" formGroupName="brandName" >
+              <mat-label>Enter Brand Name</mat-label>
+               <input matInput  placeholder="VIVO OPPO DELL"  formControlName="brandName" required [(ngModel)]="brand.brandName">
+               <a mat-icon-button matSuffix>
+                <mat-icon>devices</mat-icon> 
+               </a>
+               <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+             </mat-form-field> -->
+             <br>
+              <button type="submit" mat-raised-button color="primary" >AddBrand</button>
+              <button type="reset" mat-raised-button color="primary" (click)="onReset()">Reset</button>
+              </div>
+
+              <br>
+                   <pre>{{brandDetails.value | json}}</pre>
+          </form>   
+         </div>
+       </div>
+  </div>
+
+    
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

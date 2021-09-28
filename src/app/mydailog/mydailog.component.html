@@ -1,0 +1,20 @@
+<div class="container">
+<mat-dialog-content>
+    <p>Track Your Belonging</p>
+    <form (ngSubmit)="submit()"  [formGroup]="searchGadgets">
+    <mat-form-field appearance="fill" formGroupName="userBookedId">
+        <mat-label>CUSTOMER ID</mat-label>
+        <input matInput formControlName="userBookedId">
+      </mat-form-field>
+    
+
+
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-raised-button color="primary">search</button>
+
+<br><!--
+              <pre>{{searchGadgets.value | json}}</pre>
+              -->
+</form>
+</mat-dialog-content>
+</div>

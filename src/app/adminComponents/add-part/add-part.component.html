@@ -1,0 +1,184 @@
+<div class="row">
+  <div class="column">
+      <div class="container" fxLayout="row">
+          <div class="card" *ngIf="!deviceXs" fxLayout="row">
+    
+    <div class="columnn"   fxHide.xs>
+      <h2 fxLayoutAlign="center">Category</h2>
+      <mat-selection-list [(ngModel)]="catSelected" (ngModelChange)="onCategorySelected($event)"
+       [multiple]="false">
+       <mat-list-option *ngFor="let category of typesOfCategory" [value]="category.Id">
+       <button mat-raised-button  > {{category.Name}}</button>
+       </mat-list-option>
+     </mat-selection-list>
+    </div>
+   
+    
+       <div class="col" >
+        <div class="mat-elevation-z8">
+          <form (ngSubmit)="submit()"  [formGroup]="partDetails">
+            <mat-error>{{message}}</mat-error>
+            
+            <div>
+              <mat-form-field appearance="fill" formGroupName="categoryName" >
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="categoryName" required [(ngModel)]="partModel.categoryId" (ngModelChange)="onChangeCategory($event)" > 
+            
+                  <mat-option *ngFor="let brand of categories" [value]="brand.categoryId">{{brand.categoryName}}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Here's the brand dropdown arrow ^</mat-hint>
+                <a mat-icon-button matSuffix>
+                  <mat-icon>devices</mat-icon> 
+                 </a>
+               </mat-form-field>
+              <mat-form-field appearance="fill" formGroupName="brandName" >
+                <mat-label>Select Brand</mat-label>
+                <mat-select formControlName="brandName" required [(ngModel)]="partModel.brandId" (ngModelChange)="onChangeBrand($event)"> 
+            
+                  <mat-option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Here's the brand dropdown arrow ^</mat-hint>
+                <a mat-icon-button matSuffix>
+                  <mat-icon>devices</mat-icon> 
+                 </a>
+               </mat-form-field>
+               <mat-form-field appearance="fill" formGroupName="modelName">
+                <mat-label>Select-Model</mat-label>
+                  <mat-select formControlName="modelName" required [(ngModel)]="partModel.modelId">
+                      <mat-option *ngFor="let model of parts" [value]="model.modelId">
+                          {{model.modelName}}
+                      </mat-option>
+                  </mat-select>
+                  <mat-hint align="end">Here's the model dropdown arrow ^</mat-hint>
+                  <a mat-icon-button matSuffix>
+                    <mat-icon>devices</mat-icon> 
+                   </a>
+             </mat-form-field>
+              </div>
+              
+              <div>
+                <mat-form-field appearance="fill" formGroupName="touchandlcd" >
+                  <mat-label>Touch & Lcd Price</mat-label>
+                   <input matInput  placeholder="Series No."  formControlName="touchandlcd" required [(ngModel)]="partModel.touchandlcd">
+                   <a mat-icon-button matSuffix>
+                    <mat-icon>device_unknown</mat-icon> 
+                   </a>
+                   <mat-hint align="end">Here's the touchandlcd price^</mat-hint>
+                 </mat-form-field>
+                 <mat-form-field appearance="fill" formGroupName="touchscreenglass" >
+                    <mat-label>Touch Scree Glass Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="touchscreenglass" required [(ngModel)]="partModel.touchscreenglass">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the touchscreenglass price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="battery" >
+                    <mat-label>Enter battery Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="battery" required [(ngModel)]="partModel.battery">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the battrey price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="chargeport" >
+                    <mat-label>Enter Chargeport Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="chargeport" required [(ngModel)]="partModel.chargeport">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the chargeport price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="loudspeaker" >
+                    <mat-label>Enter loudspeaker Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="loudspeaker" required [(ngModel)]="partModel.loudspeaker">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the loudspeaker price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="earspeaker" >
+                    <mat-label>Enter earspeaker Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="earspeaker" required [(ngModel)]="partModel.earspeaker">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the earspeaker price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="audiojack" >
+                    <mat-label>Enter audiojack Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="audiojack" required [(ngModel)]="partModel.audiojack">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the audiojack price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="microphone" >
+                    <mat-label>Enter microphone Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="microphone" required [(ngModel)]="partModel.microphone">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the microphone price^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="network" >
+                    <mat-label>Enter network Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="network" required [(ngModel)]="partModel.network">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the network price^</mat-hint>
+                   </mat-form-field>
+
+
+                   <mat-form-field appearance="fill" formGroupName="softwarediagnosis" >
+                    <mat-label>Enter softwarediagnosis Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="softwarediagnosis" required [(ngModel)]="partModel.softwarediagnosis">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the s/wdiagnosis price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="deadphonediagnosis" >
+                    <mat-label>Enter deadphonediagnosis Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="deadphonediagnosis" required [(ngModel)]="partModel.deadphonediagnosis">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the d/pdiagnosis Price ^</mat-hint>
+                   </mat-form-field>
+                   <mat-form-field appearance="fill" formGroupName="waterdiagnosis" >
+                    <mat-label>Enter waterdiagnosis Price</mat-label>
+                     <input matInput  placeholder="Series No."  formControlName="waterdiagnosis" required [(ngModel)]="partModel.waterdiagnosis">
+                     <a mat-icon-button matSuffix>
+                      <mat-icon>device_unknown</mat-icon> 
+                     </a>
+                     <mat-hint align="end">Here's the w/rdiagnosis price ^</mat-hint>
+                   </mat-form-field>
+                   
+        
+                </div>
+              <button type="submit" mat-raised-button color="primary" >Submit</button>
+              <button type="reset" mat-raised-button color="primary" (click)="onReset()">Reset</button>
+              
+          </form>   
+          <br>
+
+         </div>
+       </div>
+  <br>       
+  </div>
+</div>
+</div>
+</div>
+
+
+    
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

@@ -1,0 +1,14 @@
+<div class="products">
+   
+    <div class="product" *ngFor="let item of products">
+       <mat-card>
+         <p>{{item.categoryName}}</p>
+         <p>$ <strong>{{item.categoryId}}</strong></p>
+         <img src="">
+            <button type="button" (click)="addToCart(item.categoryId)">Add to Cart</button>
+       </mat-card>
+    </div>
+    <p *ngFor="let alert of alerts">
+      <ngb-alert style="width: 300px;" [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+ </div>

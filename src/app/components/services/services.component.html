@@ -1,0 +1,133 @@
+<div class="row">
+  <div class="column">
+    <h1>Services</h1>
+      <div class="container" fxLayout="row">
+          <div class="card" *ngIf="!deviceXs" fxLayout="row">
+              <!-- MultiStep Form -->
+              <mat-drawer-container class="example-container">       
+                <mat-drawer-content>
+                  <div class="example-sidenav-content" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>All Brands & Models</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image src="https://img.jagranjosh.com/imported/images/E/GK/largest-manufacturers-mobile.jpg"
+                    alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                        <p>
+                          We repair all mobile & laptop brands and models!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+        
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>We Provide 1-Day Service</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      
+                  <img mat-card-image src="data:image/png;base64,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">
+                      <mat-card-content>
+                        <p>
+                          We provide one day Service for our customer!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+        
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>Skilled Technicians</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image src="https://www.pngitem.com/pimgs/m/421-4217836_electronics-repair-kit-class-mobile-repairing-tool-png.png"
+                    height="196px"alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                        <p>
+                          Certified professional team repair your device!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+        
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>We Provide Genuine Parts</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image src="https://www.pngkey.com/png/full/943-9434503_genuine-phone-parts-mobile-parts-photo-hd.png"
+                    alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                        <p>
+                          We provide quality & original products only!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+        
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>We Provide Data Security</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image src="https://securityintelligence.com/wp-content/uploads/2015/02/datasecurityonredkeyboar_137471-630x330.jpg"
+                    alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                        <p>
+                          Don't worry, your data is safe with us!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+        
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image" fxLayoutAlign.xs="center center"></div>
+                        <mat-card-title>We Provide 90 Days Warranty</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREwCrEYkM102CndocxZ8j7YlMexqF2UQAwzg&usqp=CAU"
+                    height="175px" alt="Photo of a Shiba Inu">
+                      <mat-card-content>
+                        <p>
+                          Certified professional team repair your device!
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                      </mat-card-actions>
+                    </mat-card>
+                  </div>
+                </mat-drawer-content>
+              </mat-drawer-container>
+           
+      
+              <!-- /.MultiStep Form -->
+          </div>
+          
+      </div>
+  </div>
+</div>

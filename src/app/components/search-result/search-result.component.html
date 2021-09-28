@@ -1,0 +1,83 @@
+
+<div class="row">
+    
+    
+
+  <div class="col">
+      
+    <div class="mat-elevation-z8">
+      
+   <form (ngSubmit)="submit()"  [formGroup]="bookedUserDetails">
+    <mat-error>{{message}}</mat-error>
+      <div>
+        <mat-form-field appearance="fill" formGroupName="userBookedId" >
+          <mat-label>Customer ID</mat-label>
+           <input matInput   formControlName="userBookedId" required [(ngModel)]="bookedData.userBookedId" readonly>
+           <a mat-icon-button matSuffix>
+            <mat-icon>support_agent</mat-icon> 
+           </a>
+           <mat-hint align="end">Here's the CustomerId^</mat-hint>
+         </mat-form-field>
+        <mat-form-field appearance="fill" formGroupName="userName" >
+          <mat-label>Customer Name</mat-label>
+           <input matInput  placeholder="Customer Name."  formControlName="userName" required [(ngModel)]="bookedData.userName" >
+           <a mat-icon-button matSuffix>
+            <mat-icon>badge</mat-icon> 
+           </a>
+           <mat-hint align="end">Here's the userName^</mat-hint>
+         </mat-form-field>
+         <mat-form-field appearance="fill" formGroupName="userPhone" >
+          <mat-label>Mobile No</mat-label>
+           <input matInput  placeholder="Mobile No."  formControlName="userPhone" required [(ngModel)]="bookedData.userPhone" readonly>
+           <a mat-icon-button matSuffix>
+            <mat-icon>phone_android</mat-icon> 
+           </a>
+           <mat-hint align="end">Here's the userBrand^</mat-hint>
+         </mat-form-field>
+        </div>
+  
+        <div>
+           <mat-form-field appearance="fill" formGroupName="userBrand" >
+            <mat-label>Brand</mat-label>
+             <input matInput  placeholder="Series No."  formControlName="userBrand" required [(ngModel)]="bookedData.brand" >
+             <a mat-icon-button matSuffix>
+              <mat-icon>phone_android</mat-icon> 
+             </a>
+             <mat-hint align="end">Here's the userBrand^</mat-hint>
+           </mat-form-field>
+          <mat-form-field appearance="fill" formGroupName="userModel" >
+            <mat-label>Model</mat-label>
+             <input matInput  placeholder="Series\Model No."  formControlName="userModel" required [(ngModel)]="bookedData.model" >
+             <a mat-icon-button matSuffix>
+              <mat-icon>device_unknown</mat-icon> 
+             </a>
+             <mat-hint align="end">Here's the modelName^</mat-hint>
+           </mat-form-field>
+           <mat-form-field appearance="fill" formGroupName="userStatus" >
+            <mat-label> Status </mat-label>
+             <input matInput  placeholder="Series No."  formControlName="userStatus" required [(ngModel)]="bookedData.userStatus">
+             <a mat-icon-button matSuffix>
+              <mat-icon>query_stats</mat-icon> 
+             </a>
+             <mat-hint align="end">Here's the userStatus^</mat-hint>
+           </mat-form-field>
+        </div>
+        
+      
+      <button type="button" mat-raised-button color="primary" (click)="back()">Back</button>
+      <br>
+      <!--<pre>{{bookedUserDetails.value | json}}</pre>-->
+  
+  </form>
+  </div>
+    
+  </div>
+  </div>
+  
+  
+  
+    
+        
+        
+    
+  

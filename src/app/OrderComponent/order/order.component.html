@@ -1,0 +1,14 @@
+<div class="order">
+    <div class="order_left">
+        <div class="order_empty" *ngIf="products==0"  >
+
+            <!--*ngIf="orderService.getOrderByUserId()==0"-->
+            <h2>Zero Orders</h2>
+            <p>You have no items in your Orders</p>
+        </div>
+        <div class="order_not_empty">
+                <p><strong>Your Orders</strong></p>
+                <app-order-product [ordered_products]="products" (deletedEvent)="deletedEventHandler($event)"></app-order-product>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.container{
+  background-size: 100%;
+  background-size: cover; 
+  height: 85%;
+
+}
+
+.card{
+  width: 100%;
+  height: 440px;
+  border-radius: 2px;
+}
+
+.row {
+  display: flex;
+  
+}
+
+.row .column {
+  flex:100%;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.column h1{
+  text-align: center;
+  font-size: 40px;
+  font-weight:bolder;
+  font-family: initial;
+  padding-top: 25px;
+}
+
+.content {
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;  
+  height: 100%;
+}
+
+.example-card {
+  max-width: 320px;
+  margin: 0px 5px 5px 0px;
+}
+
+.example-header-image {
+  background-image: url("/../assets/img/techlifelogo-blue.png");
+  background-size: cover;
+}

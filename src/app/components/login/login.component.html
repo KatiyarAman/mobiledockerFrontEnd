@@ -1,0 +1,66 @@
+<div class="container" fxLayout="row">
+    <div class="card" *ngIf="!deviceXs" fxLayout="row">
+    
+       <div class="card-example">
+       
+          <form (ngSubmit)="submit()"  [formGroup]="loginDetails">
+             <mat-error>{{message}}</mat-error>
+             <mat-form-field appearance="fill" formGroupName="userName" >
+               <mat-label>Enter your email</mat-label>
+                <input matInput  placeholder="pat@example.com"  formControlName="email" required [(ngModel)]="credentials.userName">
+                <a mat-icon-button matSuffix>
+                 <mat-icon>email</mat-icon> 
+                </a>
+                
+                <mat-hint align="end">Here's the userName^</mat-hint>
+              </mat-form-field>
+    
+             <mat-form-field appearance="fill" formGroupName="userPassword">
+                <mat-label>Enter your password</mat-label>
+                   <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required [(ngModel)]="credentials.userPassword">
+                     <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                     </a>
+                     <mat-hint align="end">Here's the password^</mat-hint>
+               </mat-form-field>
+                  
+               <button type="submit" mat-raised-button color="primary" >LogIn</button>
+               <button type="button" mat-raised-button color="primary" (click)="btnClick()">Register</button>
+
+               
+           </form>   
+          </div>
+
+    </div>
+
+    <div class="card" *ngIf="deviceXs" fxLayout="row">
+      
+      <div class="card-example">
+       
+        <form (ngSubmit)="submit()"  [formGroup]="loginDetails">
+           <mat-form-field appearance="fill" formGroupName="userName" >
+             <mat-label>Enter your email</mat-label>
+              <input matInput  placeholder="pat@example.com"   required [(ngModel)]="credentials.userName">
+              <a mat-icon-button matSuffix>
+                <mat-icon>email</mat-icon> 
+               </a>
+              
+              <mat-hint align="end">Here's the userName^</mat-hint>
+            </mat-form-field>
+  
+           <mat-form-field appearance="fill" formGroupName="userPassword">
+              <mat-label>Enter your password</mat-label>
+                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="credentials.userPassword">
+                   <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                   </a>
+                   <mat-hint align="end">Here's the password^</mat-hint>
+             </mat-form-field>
+                <button type="submit" mat-raised-button color="primary" >LogIn</button>
+                <button type="button" mat-raised-button color="primary" (click)="btnClick()">Register</button>
+         </form>   
+        </div>
+
+    </div>
+
+</div>

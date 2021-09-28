@@ -1,0 +1,11 @@
+.order{
+    background: none;
+    display: flex;
+    width: 90%;
+}
+.order_left{
+    flex:1;
+}
+.order_not_empty{
+    margin-right: 30px;
+}
